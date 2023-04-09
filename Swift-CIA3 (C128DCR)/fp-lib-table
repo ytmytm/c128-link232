@@ -1,0 +1,3 @@
+(fp_lib_table
+  (lib (name "Link232-wifi")(type "KiCad")(uri "$(KIPRJMOD)/Link232-wifi.pretty")(options "")(descr ""))
+)
