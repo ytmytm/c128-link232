@@ -126,6 +126,9 @@ Flash Wemos D1 with [Zimodem](https://github.com/bozimmerman/Zimodem) software.
 2.7.4 Arduino ESP8266 libraries using the Generic ESP8266 Module.  Versions newer than 2.7.4 may not work.
 ```
 
+"May not work" in this case means that ESP8266 will keep crashing. You can test this still in Arduino IDE in the serial monitor.
+
+
 *Attention*: Search for these defines and make these changes on the top of zimodem.ino before compiling:
 
 1. Comment out this line to make RS232 lines non-inverted by default:
