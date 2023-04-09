@@ -120,6 +120,10 @@ void loop() {
 
 Flash Wemos D1 with [Zimodem](https://github.com/bozimmerman/Zimodem) software.
 
+I have compiled it with these settings:
+
+Board: LOLIN(WEMOS) D1 R2 & Mini, 80MHz, flash 4MB (2MB FS, 1MB OTA), debug disabled, lwIP "v2 Lower Memory", Erase Flash: "Only sketch"
+
 *Attention*: Check if this notice still exists in the README. If it does - make sure to downgrade Generic ESP8266 Library to version 2.7.4 in your Arduino IDE.
 
 ```
@@ -127,7 +131,6 @@ Flash Wemos D1 with [Zimodem](https://github.com/bozimmerman/Zimodem) software.
 ```
 
 "May not work" in this case means that ESP8266 will keep crashing. You can test this still in Arduino IDE in the serial monitor.
-
 
 *Attention*: Search for these defines and make these changes on the top of zimodem.ino before compiling:
 
@@ -145,3 +148,8 @@ Flash Wemos D1 with [Zimodem](https://github.com/bozimmerman/Zimodem) software.
 
 With these changes and ACIA setup to use `/NMI` at $D700 base address both latest version of CCGMS and DesTerm 128 will work fine.
 
+Make sure that everything is setup correctly by issuing `AT` command. The modem should respond with `OK`.
+
+Then start configuration menu by typing `AT+CONFIG`
+
+By default RTS/CTS flow control is not enabled (so that operation can be checked in Arduino IDE serial monitor), so you should enable it with `ATF0` command because C64/128 will not keep up with scrolling the screen even in 19200 baud mode. You can save the settings to flash afterwards with `AT&W`.
