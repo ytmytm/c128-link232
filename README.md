@@ -76,6 +76,8 @@ In one of my C128DCRs I replaced power supply by a Mean Well RD35A power supply 
 
 Note that without 9VAC you need to replace CR8 by a wire (to short it to GND so that input to U16 pin 11 is not floating) and completely remove R7 and C80 elements.
 
+**NOTE Don't use this sketch! Use the [more accurate code by fastjack](https://github.com/fastjack/attiny-clockgen)**
+
 ATTiny runs this simple Arduino code to generate 50/60Hz waveform on TOD clock line, depending on jumper being open or closed:
 
 ```
